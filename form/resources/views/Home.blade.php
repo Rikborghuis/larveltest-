@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div>
-    <h2>Posts</h2>
+<div class="content-center ">
+    <h1 class="text-xl ">Posts</h1>
     <table>
         <thead>
             <tr>
