@@ -29,5 +29,18 @@ class PostController extends Controller
         return redirect('NewFormPost')->with('status', 'New data');
     }
 
+    public function dashboard()
+    {
+        if (Auth::check()) {
+            // User is authenticated, fetch their specific posts
+            $user = Auth::user();
+            $posts = $user->posts;
+            return view('dashboard', ['posts' => $posts]);
+        } else {
+            // Redirect to login or handle accordingly
+            return redirect()->route('login');
+        }
+    }
+
 
 }

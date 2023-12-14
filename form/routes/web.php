@@ -27,6 +27,7 @@ Route::get('/form/new', function () {
 Route::get("NewFormPost", [Postcontroller::class, 'index'])->name('newFormPost');
 Route::get("store-form", [Postcontroller::class, 'store'])->name('store-form');
 Route::get('/',[PostController::class, 'index']);
+Route::get('/dashboard', [PostController::class, 'dashboard'])->name('dashboard');
 
 
 //login/register routes
@@ -44,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
         return view('form.NewFormPost');
     })->name('newFormPost');
 });
+
 
 
 });
